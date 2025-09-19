@@ -2,9 +2,9 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
-import { Menu, X, Search } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
+import { SearchForm } from './SearchForm';
 
 const navigation = [
   { name: 'HOME', href: '/' },
@@ -17,15 +17,6 @@ const navigation = [
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [searchQuery, setSearchQuery] = useState('');
-
-  const handleSearch = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (searchQuery.trim()) {
-      // Navigate to search results
-      window.location.href = `/search?q=${encodeURIComponent(searchQuery)}`;
-    }
-  };
 
   return (
     <header className="bg-card border-b border-border sticky top-0 z-50">
@@ -56,16 +47,7 @@ export function Header() {
 
           {/* Search Bar - Desktop */}
           <div className="hidden lg:block">
-            <form onSubmit={handleSearch} className="relative">
-              <Input
-                type="text"
-                placeholder="Search breeds, facts..."
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                className="pl-10 pr-4 py-2 w-64"
-              />
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-            </form>
+            <SearchForm className="w-64" />
           </div>
 
           {/* Mobile Menu Button */}
@@ -100,16 +82,7 @@ export function Header() {
             </nav>
 
             {/* Mobile Search */}
-            <form onSubmit={handleSearch} className="mt-4 relative">
-              <Input
-                type="text"
-                placeholder="Search breeds, facts..."
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                className="pl-10 pr-4 py-2 w-full"
-              />
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-            </form>
+            <SearchForm className="mt-4 w-full" />
           </div>
         )}
       </div>
