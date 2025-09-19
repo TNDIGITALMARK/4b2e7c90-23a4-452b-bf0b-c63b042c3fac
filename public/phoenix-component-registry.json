@@ -2,10 +2,10 @@
   "projectId": "4b2e7c90-23a4-452b-bf0b-c63b042c3fac",
   "userId": "2luDlbgjvhO32uRKNns0OwSKemA3",
   "version": "1.0.0",
-  "generatedAt": "2025-09-19T03:34:49.335Z",
+  "generatedAt": "2025-09-19T04:01:38.834Z",
   "components": {
-    "phoenix-1758252889298": {
-      "phoenixId": "phoenix-1758252889298",
+    "phoenix-1758254498788": {
+      "phoenixId": "phoenix-1758254498788",
       "componentName": "AboutPage",
       "filePath": "src/app/about/page.tsx",
       "lineNumber": 124,
@@ -24,8 +24,8 @@
         "complexity": "complex"
       }
     },
-    "phoenix-1758252889299": {
-      "phoenixId": "phoenix-1758252889299",
+    "phoenix-1758254498789": {
+      "phoenixId": "phoenix-1758254498789",
       "componentName": "BreedDetailPage",
       "filePath": "src/app/breeds/[slug]/page.tsx",
       "lineNumber": 32,
@@ -50,8 +50,8 @@
         "complexity": "complex"
       }
     },
-    "phoenix-1758252889300": {
-      "phoenixId": "phoenix-1758252889300",
+    "phoenix-1758254498790": {
+      "phoenixId": "phoenix-1758254498790",
       "componentName": "BreedsPage",
       "filePath": "src/app/breeds/page.tsx",
       "lineNumber": 25,
@@ -78,13 +78,13 @@
         "complexity": "complex"
       }
     },
-    "phoenix-1758252889301": {
-      "phoenixId": "phoenix-1758252889301",
+    "phoenix-1758254498791": {
+      "phoenixId": "phoenix-1758254498791",
       "componentName": "ContactPage",
       "filePath": "src/app/contact/page.tsx",
-      "lineNumber": 89,
+      "lineNumber": 90,
       "columnNumber": 15,
-      "sourceCode": "export default function ContactPage() {\n  const [formData, setFormData] = useState<ContactFormData>({\n    name: '',\n    email: '',\n    organization: '',\n    subject: '',\n    category: '',\n    message: '',\n    urgent: false,\n    subscribe: false\n  });\n  const [isSubmitting, setIsSubmitting] = useState(false);\n  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');\n\n  const handleInputChange = (field: keyof ContactFormData, value: string | boolean) => {\n    setFormData(prev => ({\n      ...prev,\n      [field]: value\n    }));\n  };\n\n  const handleSubmit = async (e: React.FormEvent) => {\n    e.preventDefault();\n    setIsSubmitting(true);\n\n    // Simulate form submission\n    try {\n      await new Promise(resolve => setTimeout(resolve, 2000));\n      setSubmitStatus('success');\n      setFormData({\n        name: '',\n        email: '',\n        organization: '',\n        subject: '',\n        category: '',\n        message: '',\n        urgent: false,\n        subscribe: false\n      });\n    } catch (error) {\n      setSubmitStatus('error');\n    } finally {\n      setIsSubmitting(false);\n    }\n  };\n\n  return (\n    <Layout>\n      {/* Hero Section */}\n      <section className=\"bg-primary text-primary-foreground py-16\">\n        <div className=\"container mx-auto px-4\">\n          <div className=\"max-w-4xl mx-auto text-center\">\n            <h1 className=\"text-4xl md:text-5xl font-bold mb-4\">\n              Get In Touch\n            </h1>\n            <p className=\"text-xl opacity-90 mb-8\">\n              Have questions about our resources? Want to collaborate?\n              We'd love to hear from you and help advance agricultural education together.\n            </p>\n          </div>\n        </div>\n      </section>\n\n      {/* Contact Methods */}\n      <section className=\"py-16 bg-muted/30\">\n        <div className=\"container mx-auto px-4\">\n          <div className=\"grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto\">\n            {contactMethods.map((method, index) => {\n              const Icon = method.icon;\n              return (\n                <Card key={index} className=\"text-center hover:shadow-lg transition-shadow cursor-pointer\"\n                      onClick={() => window.open(method.action, '_blank')}>\n                  <CardContent className=\"p-8\">\n                    <div className=\"w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4\">\n                      <Icon className=\"h-8 w-8 text-primary-foreground\" />\n                    </div>\n                    <h3 className=\"text-xl font-semibold mb-2\">{method.title}</h3>\n                    <p className=\"text-lg font-medium text-primary mb-2\">{method.value}</p>\n                    <p className=\"text-muted-foreground text-sm\">{method.description}</p>\n                  </CardContent>\n                </Card>\n              );\n            })}\n          </div>\n        </div>\n      </section>\n\n      {/* Main Content */}\n      <section className=\"py-16\">\n        <div className=\"container mx-auto px-4\">\n          <div className=\"grid grid-cols-1 lg:grid-cols-3 gap-12 max-w-7xl mx-auto\">\n            {/* Contact Form */}\n            <div className=\"lg:col-span-2\">\n              <Card>\n                <CardHeader>\n                  <CardTitle className=\"text-2xl\">Send Us a Message</CardTitle>\n                  <p className=\"text-muted-foreground\">\n                    Fill out the form below and we'll get back to you as soon as possible.\n                  </p>\n                </CardHeader>\n                <CardContent>\n                  {submitStatus === 'success' && (\n                    <div className=\"mb-6 p-4 bg-green-50 border border-green-200 rounded-lg flex items-center\">\n                      <CheckCircle className=\"h-5 w-5 text-green-600 mr-3\" />\n                      <div>\n                        <p className=\"text-green-800 font-medium\">Message sent successfully!</p>\n                        <p className=\"text-green-600 text-sm\">We'll get back to you within 24 hours.</p>\n                      </div>\n                    </div>\n                  )}\n\n                  {submitStatus === 'error' && (\n                    <div className=\"mb-6 p-4 bg-red-50 border border-red-200 rounded-lg flex items-center\">\n                      <AlertCircle className=\"h-5 w-5 text-red-600 mr-3\" />\n                      <div>\n                        <p className=\"text-red-800 font-medium\">Failed to send message</p>\n                        <p className=\"text-red-600 text-sm\">Please try again or contact us directly.</p>\n                      </div>\n                    </div>\n                  )}\n\n                  <form onSubmit={handleSubmit} className=\"space-y-6\">\n                    <div className=\"grid grid-cols-1 md:grid-cols-2 gap-4\">\n                      <div className=\"space-y-2\">\n                        <Label htmlFor=\"name\">Full Name *</Label>\n                        <Input\n                          id=\"name\"\n                          required\n                          value={formData.name}\n                          onChange={(e) => handleInputChange('name', e.target.value)}\n                          placeholder=\"Enter your full name\"\n                        />\n                      </div>\n\n                      <div className=\"space-y-2\">\n                        <Label htmlFor=\"email\">Email Address *</Label>\n                        <Input\n                          id=\"email\"\n                          type=\"email\"\n                          required\n                          value={formData.email}\n                          onChange={(e) => handleInputChange('email', e.target.value)}\n                          placeholder=\"your.email@example.com\"\n                        />\n                      </div>\n                    </div>\n\n                    <div className=\"space-y-2\">\n                      <Label htmlFor=\"organization\">Organization/Institution</Label>\n                      <Input\n                        id=\"organization\"\n                        value={formData.organization}\n                        onChange={(e) => handleInputChange('organization', e.target.value)}\n                        placeholder=\"School, University, Farm, Organization (optional)\"\n                      />\n                    </div>\n\n                    <div className=\"grid grid-cols-1 md:grid-cols-2 gap-4\">\n                      <div className=\"space-y-2\">\n                        <Label htmlFor=\"category\">Inquiry Type *</Label>\n                        <Select value={formData.category} onValueChange={(value) => handleInputChange('category', value)}>\n                          <SelectTrigger>\n                            <SelectValue placeholder=\"Select inquiry type\" />\n                          </SelectTrigger>\n                          <SelectContent>\n                            {categories.map((cat) => (\n                              <SelectItem key={cat.value} value={cat.value}>\n                                {cat.label}\n                              </SelectItem>\n                            ))}\n                          </SelectContent>\n                        </Select>\n                      </div>\n\n                      <div className=\"space-y-2\">\n                        <Label htmlFor=\"subject\">Subject *</Label>\n                        <Input\n                          id=\"subject\"\n                          required\n                          value={formData.subject}\n                          onChange={(e) => handleInputChange('subject', e.target.value)}\n                          placeholder=\"Brief subject of your inquiry\"\n                        />\n                      </div>\n                    </div>\n\n                    <div className=\"space-y-2\">\n                      <Label htmlFor=\"message\">Message *</Label>\n                      <Textarea\n                        id=\"message\"\n                        required\n                        rows={6}\n                        value={formData.message}\n                        onChange={(e) => handleInputChange('message', e.target.value)}\n                        placeholder=\"Please provide details about your inquiry, questions, or how we can help you...\"\n                      />\n                    </div>\n\n                    <div className=\"space-y-4\">\n                      <div className=\"flex items-center space-x-2\">\n                        <Checkbox\n                          id=\"urgent\"\n                          checked={formData.urgent}\n                          onCheckedChange={(checked) => handleInputChange('urgent', !!checked)}\n                        />\n                        <Label htmlFor=\"urgent\" className=\"text-sm\">\n                          This is an urgent inquiry\n                        </Label>\n                      </div>\n\n                      <div className=\"flex items-center space-x-2\">\n                        <Checkbox\n                          id=\"subscribe\"\n                          checked={formData.subscribe}\n                          onCheckedChange={(checked) => handleInputChange('subscribe', !!checked)}\n                        />\n                        <Label htmlFor=\"subscribe\" className=\"text-sm\">\n                          Subscribe to our newsletter for updates and new educational resources\n                        </Label>\n                      </div>\n                    </div>\n\n                    <Button\n                      type=\"submit\"\n                      size=\"lg\"\n                      className=\"w-full\"\n                      disabled={isSubmitting || !formData.name || !formData.email || !formData.subject || !formData.message}\n                    >\n                      {isSubmitting ? (\n                        <>\n                          <div className=\"animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2\" />\n                          Sending Message...\n                        </>\n                      ) : (\n                        <>\n                          <Send className=\"mr-2 h-4 w-4\" />\n                          Send Message\n                        </>\n                      )}\n                    </Button>\n                  </form>\n                </CardContent>\n              </Card>\n            </div>\n\n            {/* Sidebar */}\n            <div className=\"space-y-8\">\n              {/* Office Hours */}\n              <Card>\n                <CardHeader>\n                  <CardTitle className=\"flex items-center\">\n                    <Clock className=\"mr-2 h-5 w-5\" />\n                    Office Hours\n                  </CardTitle>\n                </CardHeader>\n                <CardContent>\n                  <div className=\"space-y-3\">\n                    <div className=\"flex justify-between\">\n                      <span className=\"text-sm\">Monday - Friday</span>\n                      <span className=\"text-sm font-medium\">9:00 AM - 5:00 PM EST</span>\n                    </div>\n                    <div className=\"flex justify-between\">\n                      <span className=\"text-sm\">Saturday</span>\n                      <span className=\"text-sm font-medium\">10:00 AM - 2:00 PM EST</span>\n                    </div>\n                    <div className=\"flex justify-between\">\n                      <span className=\"text-sm\">Sunday</span>\n                      <span className=\"text-sm font-medium\">Closed</span>\n                    </div>\n                  </div>\n                  <p className=\"text-xs text-muted-foreground mt-4\">\n                    Emergency inquiries will be addressed as soon as possible.\n                  </p>\n                </CardContent>\n              </Card>\n\n              {/* Quick Links */}\n              <Card>\n                <CardHeader>\n                  <CardTitle>Quick Links</CardTitle>\n                </CardHeader>\n                <CardContent>\n                  <div className=\"space-y-4\">\n                    <Button variant=\"outline\" className=\"w-full justify-start\" asChild>\n                      <a href=\"/breeds\">\n                        <Users className=\"mr-2 h-4 w-4\" />\n                        Browse Breed Database\n                      </a>\n                    </Button>\n                    <Button variant=\"outline\" className=\"w-full justify-start\" asChild>\n                      <a href=\"/facts\">\n                        <BookOpen className=\"mr-2 h-4 w-4\" />\n                        Educational Facts\n                      </a>\n                    </Button>\n                    <Button variant=\"outline\" className=\"w-full justify-start\" asChild>\n                      <a href=\"/about\">\n                        <Lightbulb className=\"mr-2 h-4 w-4\" />\n                        About Our Mission\n                      </a>\n                    </Button>\n                    <Button variant=\"outline\" className=\"w-full justify-start\" asChild>\n                      <a href=\"/gallery\">\n                        <Heart className=\"mr-2 h-4 w-4\" />\n                        Photo Gallery\n                      </a>\n                    </Button>\n                  </div>\n                </CardContent>\n              </Card>\n\n              {/* Response Time */}\n              <Card>\n                <CardHeader>\n                  <CardTitle>Response Times</CardTitle>\n                </CardHeader>\n                <CardContent>\n                  <div className=\"space-y-3 text-sm\">\n                    <div className=\"flex items-center justify-between\">\n                      <span>General inquiries</span>\n                      <span className=\"font-medium\">24-48 hours</span>\n                    </div>\n                    <div className=\"flex items-center justify-between\">\n                      <span>Educational partnerships</span>\n                      <span className=\"font-medium\">2-3 business days</span>\n                    </div>\n                    <div className=\"flex items-center justify-between\">\n                      <span>Technical support</span>\n                      <span className=\"font-medium\">1 business day</span>\n                    </div>\n                    <div className=\"flex items-center justify-between\">\n                      <span>Urgent requests</span>\n                      <span className=\"font-medium\">Same day</span>\n                    </div>\n                  </div>\n                </CardContent>\n              </Card>\n            </div>\n          </div>\n        </div>\n      </section>\n\n      {/* FAQ Section */}\n      <section className=\"py-16 bg-muted/30\">\n        <div className=\"container mx-auto px-4\">\n          <div className=\"max-w-4xl mx-auto\">\n            <div className=\"text-center mb-12\">\n              <h2 className=\"text-3xl font-bold mb-4\">Frequently Asked Questions</h2>\n              <p className=\"text-xl text-muted-foreground\">\n                Quick answers to common questions\n              </p>\n            </div>\n\n            <div className=\"space-y-6\">\n              {faqs.map((faq, index) => (\n                <Card key={index}>\n                  <CardContent className=\"p-6\">\n                    <h3 className=\"text-lg font-semibold mb-3\">{faq.question}</h3>\n                    <p className=\"text-muted-foreground leading-relaxed\">{faq.answer}</p>\n                  </CardContent>\n                </Card>\n              ))}\n            </div>\n          </div>\n        </div>\n      </section>\n\n      {/* Location Map Placeholder */}\n      <section className=\"py-16\">\n        <div className=\"container mx-auto px-4\">\n          <div className=\"text-center mb-8\">\n            <h2 className=\"text-3xl font-bold mb-4\">Find Us</h2>\n            <p className=\"text-xl text-muted-foreground\">\n              Located in the heart of agricultural education\n            </p>\n          </div>\n\n          <Card className=\"max-w-4xl mx-auto\">\n            <CardContent className=\"p-0\">\n              <div className=\"h-96 bg-muted rounded-lg flex items-center justify-center\">\n                <div className=\"text-center\">\n                  <MapPin className=\"h-12 w-12 text-muted-foreground mx-auto mb-4\" />\n                  <h3 className=\"text-xl font-semibold mb-2\">Agricultural Education Center</h3>\n                  <p className=\"text-muted-foreground\">123 Farm Road, College Station, TX 77843</p>\n                  <Button className=\"mt-4\" asChild>\n                    <a href=\"https://maps.google.com/?q=College+Station+TX\" target=\"_blank\" rel=\"noopener noreferrer\">\n                      View on Google Maps\n                    </a>\n                  </Button>\n                </div>\n              </div>\n            </CardContent>\n          </Card>\n        </div>\n      </section>\n    </Layout>\n  );\n}",
+      "sourceCode": "export default function ContactPage() {\n  const [formData, setFormData] = useState<ContactFormData>({\n    name: '',\n    email: '',\n    organization: '',\n    subject: '',\n    category: '',\n    message: '',\n    urgent: false,\n    subscribe: false\n  });\n  const [isSubmitting, setIsSubmitting] = useState(false);\n  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');\n\n  const handleInputChange = (field: keyof ContactFormData, value: string | boolean) => {\n    setFormData(prev => ({\n      ...prev,\n      [field]: value\n    }));\n  };\n\n  const handleSubmit = async (e: React.FormEvent) => {\n    e.preventDefault();\n    setIsSubmitting(true);\n\n    // Simulate form submission\n    try {\n      await new Promise(resolve => setTimeout(resolve, 2000));\n      setSubmitStatus('success');\n      setFormData({\n        name: '',\n        email: '',\n        organization: '',\n        subject: '',\n        category: '',\n        message: '',\n        urgent: false,\n        subscribe: false\n      });\n    } catch (error) {\n      setSubmitStatus('error');\n    } finally {\n      setIsSubmitting(false);\n    }\n  };\n\n  return (\n    <Layout>\n      {/* Hero Section */}\n      <section className=\"bg-primary text-primary-foreground py-16\">\n        <div className=\"container mx-auto px-4\">\n          <div className=\"max-w-4xl mx-auto text-center\">\n            <h1 className=\"text-4xl md:text-5xl font-bold mb-4\">\n              Get In Touch\n            </h1>\n            <p className=\"text-xl opacity-90 mb-8\">\n              Have questions about our resources? Want to collaborate?\n              We'd love to hear from you and help advance agricultural education together.\n            </p>\n          </div>\n        </div>\n      </section>\n\n      {/* Contact Methods */}\n      <section className=\"py-16 bg-muted/30\">\n        <div className=\"container mx-auto px-4\">\n          <div className=\"grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto\">\n            {contactMethods.map((method, index) => {\n              const Icon = method.icon;\n              return (\n                <Card key={index} className=\"text-center hover:shadow-lg transition-shadow cursor-pointer\"\n                      onClick={() => window.open(method.action, '_blank')}>\n                  <CardContent className=\"p-8\">\n                    <div className=\"w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4\">\n                      <Icon className=\"h-8 w-8 text-primary-foreground\" />\n                    </div>\n                    <h3 className=\"text-xl font-semibold mb-2\">{method.title}</h3>\n                    <p className=\"text-lg font-medium text-primary mb-2\">{method.value}</p>\n                    <p className=\"text-muted-foreground text-sm\">{method.description}</p>\n                  </CardContent>\n                </Card>\n              );\n            })}\n          </div>\n        </div>\n      </section>\n\n      {/* Main Content */}\n      <section className=\"py-16\">\n        <div className=\"container mx-auto px-4\">\n          <div className=\"grid grid-cols-1 lg:grid-cols-3 gap-12 max-w-7xl mx-auto\">\n            {/* Contact Form */}\n            <div className=\"lg:col-span-2\">\n              <Card>\n                <CardHeader>\n                  <CardTitle className=\"text-2xl\">Send Us a Message</CardTitle>\n                  <p className=\"text-muted-foreground\">\n                    Fill out the form below and we'll get back to you as soon as possible.\n                  </p>\n                </CardHeader>\n                <CardContent>\n                  {submitStatus === 'success' && (\n                    <div className=\"mb-6 p-4 bg-green-50 border border-green-200 rounded-lg flex items-center\">\n                      <CheckCircle className=\"h-5 w-5 text-green-600 mr-3\" />\n                      <div>\n                        <p className=\"text-green-800 font-medium\">Message sent successfully!</p>\n                        <p className=\"text-green-600 text-sm\">We'll get back to you within 24 hours.</p>\n                      </div>\n                    </div>\n                  )}\n\n                  {submitStatus === 'error' && (\n                    <div className=\"mb-6 p-4 bg-red-50 border border-red-200 rounded-lg flex items-center\">\n                      <AlertCircle className=\"h-5 w-5 text-red-600 mr-3\" />\n                      <div>\n                        <p className=\"text-red-800 font-medium\">Failed to send message</p>\n                        <p className=\"text-red-600 text-sm\">Please try again or contact us directly.</p>\n                      </div>\n                    </div>\n                  )}\n\n                  <form onSubmit={handleSubmit} className=\"space-y-6\">\n                    <div className=\"grid grid-cols-1 md:grid-cols-2 gap-4\">\n                      <div className=\"space-y-2\">\n                        <Label htmlFor=\"name\">Full Name *</Label>\n                        <Input\n                          id=\"name\"\n                          required\n                          value={formData.name}\n                          onChange={(e) => handleInputChange('name', e.target.value)}\n                          placeholder=\"Enter your full name\"\n                        />\n                      </div>\n\n                      <div className=\"space-y-2\">\n                        <Label htmlFor=\"email\">Email Address *</Label>\n                        <Input\n                          id=\"email\"\n                          type=\"email\"\n                          required\n                          value={formData.email}\n                          onChange={(e) => handleInputChange('email', e.target.value)}\n                          placeholder=\"your.email@example.com\"\n                        />\n                      </div>\n                    </div>\n\n                    <div className=\"space-y-2\">\n                      <Label htmlFor=\"organization\">Organization/Institution</Label>\n                      <Input\n                        id=\"organization\"\n                        value={formData.organization}\n                        onChange={(e) => handleInputChange('organization', e.target.value)}\n                        placeholder=\"School, University, Farm, Organization (optional)\"\n                      />\n                    </div>\n\n                    <div className=\"grid grid-cols-1 md:grid-cols-2 gap-4\">\n                      <div className=\"space-y-2\">\n                        <Label htmlFor=\"category\">Inquiry Type *</Label>\n                        <Select value={formData.category} onValueChange={(value) => handleInputChange('category', value)}>\n                          <SelectTrigger>\n                            <SelectValue placeholder=\"Select inquiry type\" />\n                          </SelectTrigger>\n                          <SelectContent>\n                            {categories.map((cat) => (\n                              <SelectItem key={cat.value} value={cat.value}>\n                                {cat.label}\n                              </SelectItem>\n                            ))}\n                          </SelectContent>\n                        </Select>\n                      </div>\n\n                      <div className=\"space-y-2\">\n                        <Label htmlFor=\"subject\">Subject *</Label>\n                        <Input\n                          id=\"subject\"\n                          required\n                          value={formData.subject}\n                          onChange={(e) => handleInputChange('subject', e.target.value)}\n                          placeholder=\"Brief subject of your inquiry\"\n                        />\n                      </div>\n                    </div>\n\n                    <div className=\"space-y-2\">\n                      <Label htmlFor=\"message\">Message *</Label>\n                      <Textarea\n                        id=\"message\"\n                        required\n                        rows={6}\n                        value={formData.message}\n                        onChange={(e) => handleInputChange('message', e.target.value)}\n                        placeholder=\"Please provide details about your inquiry, questions, or how we can help you...\"\n                      />\n                    </div>\n\n                    <div className=\"space-y-4\">\n                      <div className=\"flex items-center space-x-2\">\n                        <Checkbox\n                          id=\"urgent\"\n                          checked={formData.urgent}\n                          onCheckedChange={(checked) => handleInputChange('urgent', !!checked)}\n                        />\n                        <Label htmlFor=\"urgent\" className=\"text-sm\">\n                          This is an urgent inquiry\n                        </Label>\n                      </div>\n\n                      <div className=\"flex items-center space-x-2\">\n                        <Checkbox\n                          id=\"subscribe\"\n                          checked={formData.subscribe}\n                          onCheckedChange={(checked) => handleInputChange('subscribe', !!checked)}\n                        />\n                        <Label htmlFor=\"subscribe\" className=\"text-sm\">\n                          Subscribe to our newsletter for updates and new educational resources\n                        </Label>\n                      </div>\n                    </div>\n\n                    <Button\n                      type=\"submit\"\n                      size=\"lg\"\n                      className=\"w-full\"\n                      disabled={isSubmitting || !formData.name || !formData.email || !formData.subject || !formData.message}\n                    >\n                      {isSubmitting ? (\n                        <>\n                          <div className=\"animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2\" />\n                          Sending Message...\n                        </>\n                      ) : (\n                        <>\n                          <Send className=\"mr-2 h-4 w-4\" />\n                          Send Message\n                        </>\n                      )}\n                    </Button>\n                  </form>\n                </CardContent>\n              </Card>\n            </div>\n\n            {/* Sidebar */}\n            <div className=\"space-y-8\">\n              {/* Office Hours */}\n              <Card>\n                <CardHeader>\n                  <CardTitle className=\"flex items-center\">\n                    <Clock className=\"mr-2 h-5 w-5\" />\n                    Office Hours\n                  </CardTitle>\n                </CardHeader>\n                <CardContent>\n                  <div className=\"space-y-3\">\n                    <div className=\"flex justify-between\">\n                      <span className=\"text-sm\">Monday - Friday</span>\n                      <span className=\"text-sm font-medium\">9:00 AM - 5:00 PM EST</span>\n                    </div>\n                    <div className=\"flex justify-between\">\n                      <span className=\"text-sm\">Saturday</span>\n                      <span className=\"text-sm font-medium\">10:00 AM - 2:00 PM EST</span>\n                    </div>\n                    <div className=\"flex justify-between\">\n                      <span className=\"text-sm\">Sunday</span>\n                      <span className=\"text-sm font-medium\">Closed</span>\n                    </div>\n                  </div>\n                  <p className=\"text-xs text-muted-foreground mt-4\">\n                    Emergency inquiries will be addressed as soon as possible.\n                  </p>\n                </CardContent>\n              </Card>\n\n              {/* Quick Links */}\n              <Card>\n                <CardHeader>\n                  <CardTitle>Quick Links</CardTitle>\n                </CardHeader>\n                <CardContent>\n                  <div className=\"space-y-4\">\n                    <Button variant=\"outline\" className=\"w-full justify-start\" asChild>\n                      <Link href=\"/breeds\">\n                        <Users className=\"mr-2 h-4 w-4\" />\n                        Browse Breed Database\n                      </Link>\n                    </Button>\n                    <Button variant=\"outline\" className=\"w-full justify-start\" asChild>\n                      <Link href=\"/facts\">\n                        <BookOpen className=\"mr-2 h-4 w-4\" />\n                        Educational Facts\n                      </Link>\n                    </Button>\n                    <Button variant=\"outline\" className=\"w-full justify-start\" asChild>\n                      <Link href=\"/about\">\n                        <Lightbulb className=\"mr-2 h-4 w-4\" />\n                        About Our Mission\n                      </Link>\n                    </Button>\n                    <Button variant=\"outline\" className=\"w-full justify-start\" asChild>\n                      <a href=\"/gallery\">\n                        <Heart className=\"mr-2 h-4 w-4\" />\n                        Photo Gallery\n                      </a>\n                    </Button>\n                  </div>\n                </CardContent>\n              </Card>\n\n              {/* Response Time */}\n              <Card>\n                <CardHeader>\n                  <CardTitle>Response Times</CardTitle>\n                </CardHeader>\n                <CardContent>\n                  <div className=\"space-y-3 text-sm\">\n                    <div className=\"flex items-center justify-between\">\n                      <span>General inquiries</span>\n                      <span className=\"font-medium\">24-48 hours</span>\n                    </div>\n                    <div className=\"flex items-center justify-between\">\n                      <span>Educational partnerships</span>\n                      <span className=\"font-medium\">2-3 business days</span>\n                    </div>\n                    <div className=\"flex items-center justify-between\">\n                      <span>Technical support</span>\n                      <span className=\"font-medium\">1 business day</span>\n                    </div>\n                    <div className=\"flex items-center justify-between\">\n                      <span>Urgent requests</span>\n                      <span className=\"font-medium\">Same day</span>\n                    </div>\n                  </div>\n                </CardContent>\n              </Card>\n            </div>\n          </div>\n        </div>\n      </section>\n\n      {/* FAQ Section */}\n      <section className=\"py-16 bg-muted/30\">\n        <div className=\"container mx-auto px-4\">\n          <div className=\"max-w-4xl mx-auto\">\n            <div className=\"text-center mb-12\">\n              <h2 className=\"text-3xl font-bold mb-4\">Frequently Asked Questions</h2>\n              <p className=\"text-xl text-muted-foreground\">\n                Quick answers to common questions\n              </p>\n            </div>\n\n            <div className=\"space-y-6\">\n              {faqs.map((faq, index) => (\n                <Card key={index}>\n                  <CardContent className=\"p-6\">\n                    <h3 className=\"text-lg font-semibold mb-3\">{faq.question}</h3>\n                    <p className=\"text-muted-foreground leading-relaxed\">{faq.answer}</p>\n                  </CardContent>\n                </Card>\n              ))}\n            </div>\n          </div>\n        </div>\n      </section>\n\n      {/* Location Map Placeholder */}\n      <section className=\"py-16\">\n        <div className=\"container mx-auto px-4\">\n          <div className=\"text-center mb-8\">\n            <h2 className=\"text-3xl font-bold mb-4\">Find Us</h2>\n            <p className=\"text-xl text-muted-foreground\">\n              Located in the heart of agricultural education\n            </p>\n          </div>\n\n          <Card className=\"max-w-4xl mx-auto\">\n            <CardContent className=\"p-0\">\n              <div className=\"h-96 bg-muted rounded-lg flex items-center justify-center\">\n                <div className=\"text-center\">\n                  <MapPin className=\"h-12 w-12 text-muted-foreground mx-auto mb-4\" />\n                  <h3 className=\"text-xl font-semibold mb-2\">Agricultural Education Center</h3>\n                  <p className=\"text-muted-foreground\">123 Farm Road, College Station, TX 77843</p>\n                  <Button className=\"mt-4\" asChild>\n                    <a href=\"https://maps.google.com/?q=College+Station+TX\" target=\"_blank\" rel=\"noopener noreferrer\">\n                      View on Google Maps\n                    </a>\n                  </Button>\n                </div>\n              </div>\n            </CardContent>\n          </Card>\n        </div>\n      </section>\n    </Layout>\n  );\n}",
       "props": [],
       "imports": [],
       "modificationHints": [
@@ -104,8 +104,8 @@
         "complexity": "complex"
       }
     },
-    "phoenix-1758252889302": {
-      "phoenixId": "phoenix-1758252889302",
+    "phoenix-1758254498792": {
+      "phoenixId": "phoenix-1758254498792",
       "componentName": "CulturePage",
       "filePath": "src/app/culture/page.tsx",
       "lineNumber": 104,
@@ -124,13 +124,13 @@
         "complexity": "complex"
       }
     },
-    "phoenix-1758252889303": {
-      "phoenixId": "phoenix-1758252889303",
+    "phoenix-1758254498793": {
+      "phoenixId": "phoenix-1758254498793",
       "componentName": "Error",
       "filePath": "src/app/error.tsx",
-      "lineNumber": 5,
+      "lineNumber": 7,
       "columnNumber": 15,
-      "sourceCode": "export default function Error() {\n  return (\n    <div className=\"min-h-screen flex items-center justify-center\">\n      <div className=\"text-center\">\n        <h1 className=\"text-4xl font-bold mb-4\">500 - Server Error</h1>\n        <p className=\"text-xl mb-4\">Something went wrong. Please try again later.</p>\n        <a href=\"/\" className=\"text-blue-500 hover:text-blue-700 underline\">\n          Return to Home\n        </a>\n      </div>\n    </div>\n  );\n}",
+      "sourceCode": "export default function Error() {\n  return (\n    <div className=\"min-h-screen flex items-center justify-center\">\n      <div className=\"text-center\">\n        <h1 className=\"text-4xl font-bold mb-4\">500 - Server Error</h1>\n        <p className=\"text-xl mb-4\">Something went wrong. Please try again later.</p>\n        <Link href=\"/\" className=\"text-blue-500 hover:text-blue-700 underline\">\n          Return to Home\n        </Link>\n      </div>\n    </div>\n  );\n}",
       "props": [],
       "imports": [],
       "modificationHints": [
@@ -142,8 +142,8 @@
         "complexity": "moderate"
       }
     },
-    "phoenix-1758252889304": {
-      "phoenixId": "phoenix-1758252889304",
+    "phoenix-1758254498794": {
+      "phoenixId": "phoenix-1758254498794",
       "componentName": "FactsPage",
       "filePath": "src/app/facts/page.tsx",
       "lineNumber": 21,
@@ -169,8 +169,8 @@
         "complexity": "complex"
       }
     },
-    "phoenix-1758252889305": {
-      "phoenixId": "phoenix-1758252889305",
+    "phoenix-1758254498795": {
+      "phoenixId": "phoenix-1758254498795",
       "componentName": "GalleryPage",
       "filePath": "src/app/gallery/page.tsx",
       "lineNumber": 71,
@@ -189,8 +189,8 @@
         "complexity": "complex"
       }
     },
-    "phoenix-1758252889306": {
-      "phoenixId": "phoenix-1758252889306",
+    "phoenix-1758254498796": {
+      "phoenixId": "phoenix-1758254498796",
       "componentName": "GlobalError",
       "filePath": "src/app/global-error.tsx",
       "lineNumber": 5,
@@ -220,13 +220,13 @@
         "complexity": "complex"
       }
     },
-    "phoenix-1758252889307": {
-      "phoenixId": "phoenix-1758252889307",
+    "phoenix-1758254498797": {
+      "phoenixId": "phoenix-1758254498797",
       "componentName": "RootLayout",
       "filePath": "src/app/layout.tsx",
       "lineNumber": 25,
       "columnNumber": 15,
-      "sourceCode": "export default function RootLayout({\n  children,\n}: Readonly<{\n  children: React.ReactNode;\n}>) {\n  return (\n    <html lang=\"en\" suppressHydrationWarning>\n      <body\n        className={`${geistSans.variable} ${geistMono.variable} antialiased`}\n      >\n        <QueryProvider>\n          <ThemeProvider\n            attribute=\"class\"\n            defaultTheme=\"system\"\n            enableSystem\n            disableTransitionOnChange\n          >\n            <TooltipProvider>\n              {children}\n              <Toaster />\n              <Sonner />\n            </TooltipProvider>\n          </ThemeProvider>\n        </QueryProvider>\n      </body>\n    </html>\n  );\n}",
+      "sourceCode": "export default function RootLayout({\n  children,\n}: Readonly<{\n  children: React.ReactNode;\n}>) {\n  return (\n    <html lang=\"en\" suppressHydrationWarning>\n      <body\n        className={`${geistSans.variable} ${geistMono.variable} antialiased`}\n      >\n        <script src=\"/phoenix-tracking.js\" async></script>\n        <QueryProvider>\n          <ThemeProvider\n            attribute=\"class\"\n            defaultTheme=\"system\"\n            enableSystem\n            disableTransitionOnChange\n          >\n            <TooltipProvider>\n              {children}\n              <Toaster />\n              <Sonner />\n            </TooltipProvider>\n          </ThemeProvider>\n        </QueryProvider>\n      </body>\n    </html>\n  );\n}",
       "props": [
         {
           "name": "children",
@@ -237,15 +237,17 @@
       "imports": [],
       "modificationHints": [
         "text-update",
-        "style-change"
+        "style-change",
+        "careful-modification",
+        "test-thoroughly"
       ],
       "astAnalysis": {
         "componentType": "functional",
-        "complexity": "moderate"
+        "complexity": "complex"
       }
     },
-    "phoenix-1758252889308": {
-      "phoenixId": "phoenix-1758252889308",
+    "phoenix-1758254498798": {
+      "phoenixId": "phoenix-1758254498798",
       "componentName": "Loading",
       "filePath": "src/app/loading.tsx",
       "lineNumber": 1,
@@ -262,13 +264,13 @@
         "complexity": "moderate"
       }
     },
-    "phoenix-1758252889309": {
-      "phoenixId": "phoenix-1758252889309",
+    "phoenix-1758254498799": {
+      "phoenixId": "phoenix-1758254498799",
       "componentName": "NotFound",
       "filePath": "src/app/not-found.tsx",
-      "lineNumber": 3,
+      "lineNumber": 5,
       "columnNumber": 15,
-      "sourceCode": "export default function NotFound() {\n  return (\n    <div className=\"min-h-screen flex items-center justify-center\">\n      <div className=\"text-center\">\n        <h1 className=\"text-4xl font-bold mb-4\">404 - Page Not Found</h1>\n        <p className=\"text-xl mb-4\">The page you are looking for does not exist.</p>\n        <a href=\"/\" className=\"text-blue-500 hover:text-blue-700 underline\">\n          Return to Home\n        </a>\n      </div>\n    </div>\n  );\n}",
+      "sourceCode": "export default function NotFound() {\n  return (\n    <div className=\"min-h-screen flex items-center justify-center\">\n      <div className=\"text-center\">\n        <h1 className=\"text-4xl font-bold mb-4\">404 - Page Not Found</h1>\n        <p className=\"text-xl mb-4\">The page you are looking for does not exist.</p>\n        <Link href=\"/\" className=\"text-blue-500 hover:text-blue-700 underline\">\n          Return to Home\n        </Link>\n      </div>\n    </div>\n  );\n}",
       "props": [],
       "imports": [],
       "modificationHints": [
@@ -280,8 +282,8 @@
         "complexity": "moderate"
       }
     },
-    "phoenix-1758252889310": {
-      "phoenixId": "phoenix-1758252889310",
+    "phoenix-1758254498800": {
+      "phoenixId": "phoenix-1758254498800",
       "componentName": "HomePage",
       "filePath": "src/app/page.tsx",
       "lineNumber": 12,
@@ -300,8 +302,8 @@
         "complexity": "complex"
       }
     },
-    "phoenix-1758252889311": {
-      "phoenixId": "phoenix-1758252889311",
+    "phoenix-1758254498801": {
+      "phoenixId": "phoenix-1758254498801",
       "componentName": "BreedCard",
       "filePath": "src/components/breeds/BreedCard.tsx",
       "lineNumber": 14,
@@ -336,8 +338,8 @@
         "complexity": "complex"
       }
     },
-    "phoenix-1758252889312": {
-      "phoenixId": "phoenix-1758252889312",
+    "phoenix-1758254498802": {
+      "phoenixId": "phoenix-1758254498802",
       "componentName": "Footer",
       "filePath": "src/components/layout/Footer.tsx",
       "lineNumber": 27,
@@ -356,13 +358,13 @@
         "complexity": "complex"
       }
     },
-    "phoenix-1758252889313": {
-      "phoenixId": "phoenix-1758252889313",
+    "phoenix-1758254498803": {
+      "phoenixId": "phoenix-1758254498803",
       "componentName": "Header",
       "filePath": "src/components/layout/Header.tsx",
       "lineNumber": 18,
       "columnNumber": 7,
-      "sourceCode": "export function Header() {\n  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);\n  const [searchQuery, setSearchQuery] = useState('');\n\n  const handleSearch = (e: React.FormEvent) => {\n    e.preventDefault();\n    if (searchQuery.trim()) {\n      // Navigate to search results\n      window.location.href = `/search?q=${encodeURIComponent(searchQuery)}`;\n    }\n  };\n\n  return (\n    <header className=\"bg-card border-b border-border sticky top-0 z-50\">\n      <div className=\"container mx-auto px-4 py-4\">\n        <div className=\"flex items-center justify-between\">\n          {/* Logo */}\n          <Link href=\"/\" className=\"flex items-center space-x-3\">\n            <div className=\"w-8 h-8 rounded-full bg-primary flex items-center justify-center\">\n              <span className=\"text-primary-foreground font-bold text-lg\">🐄</span>\n            </div>\n            <span className=\"text-xl font-bold text-foreground tracking-tight\">\n              COWHERD\n            </span>\n          </Link>\n\n          {/* Desktop Navigation */}\n          <nav className=\"hidden md:flex items-center space-x-8\">\n            {navigation.map((item) => (\n              <Link\n                key={item.name}\n                href={item.href}\n                className=\"text-sm font-medium text-muted-foreground hover:text-primary transition-colors duration-200\"\n              >\n                {item.name}\n              </Link>\n            ))}\n          </nav>\n\n          {/* Search Bar - Desktop */}\n          <div className=\"hidden lg:block\">\n            <form onSubmit={handleSearch} className=\"relative\">\n              <Input\n                type=\"text\"\n                placeholder=\"Search breeds, facts...\"\n                value={searchQuery}\n                onChange={(e) => setSearchQuery(e.target.value)}\n                className=\"pl-10 pr-4 py-2 w-64\"\n              />\n              <Search className=\"absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground\" />\n            </form>\n          </div>\n\n          {/* Mobile Menu Button */}\n          <Button\n            variant=\"ghost\"\n            size=\"sm\"\n            className=\"md:hidden\"\n            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}\n          >\n            {mobileMenuOpen ? (\n              <X className=\"h-6 w-6\" />\n            ) : (\n              <Menu className=\"h-6 w-6\" />\n            )}\n          </Button>\n        </div>\n\n        {/* Mobile Navigation */}\n        {mobileMenuOpen && (\n          <div className=\"md:hidden mt-4 pb-4 border-t border-border pt-4\">\n            <nav className=\"flex flex-col space-y-4\">\n              {navigation.map((item) => (\n                <Link\n                  key={item.name}\n                  href={item.href}\n                  className=\"text-sm font-medium text-muted-foreground hover:text-primary transition-colors duration-200\"\n                  onClick={() => setMobileMenuOpen(false)}\n                >\n                  {item.name}\n                </Link>\n              ))}\n            </nav>\n\n            {/* Mobile Search */}\n            <form onSubmit={handleSearch} className=\"mt-4 relative\">\n              <Input\n                type=\"text\"\n                placeholder=\"Search breeds, facts...\"\n                value={searchQuery}\n                onChange={(e) => setSearchQuery(e.target.value)}\n                className=\"pl-10 pr-4 py-2 w-full\"\n              />\n              <Search className=\"absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground\" />\n            </form>\n          </div>\n        )}\n      </div>\n    </header>\n  );\n}",
+      "sourceCode": "export function Header() {\n  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);\n\n  return (\n    <header className=\"bg-card border-b border-border sticky top-0 z-50\">\n      <div className=\"container mx-auto px-4 py-4\">\n        <div className=\"flex items-center justify-between\">\n          {/* Logo */}\n          <Link href=\"/\" className=\"flex items-center space-x-3\">\n            <div className=\"w-8 h-8 rounded-full bg-primary flex items-center justify-center\">\n              <span className=\"text-primary-foreground font-bold text-lg\">🐄</span>\n            </div>\n            <span className=\"text-xl font-bold text-foreground tracking-tight\">\n              COWHERD\n            </span>\n          </Link>\n\n          {/* Desktop Navigation */}\n          <nav className=\"hidden md:flex items-center space-x-8\">\n            {navigation.map((item) => (\n              <Link\n                key={item.name}\n                href={item.href}\n                className=\"text-sm font-medium text-muted-foreground hover:text-primary transition-colors duration-200\"\n              >\n                {item.name}\n              </Link>\n            ))}\n          </nav>\n\n          {/* Search Bar - Desktop */}\n          <div className=\"hidden lg:block\">\n            <SearchForm className=\"w-64\" />\n          </div>\n\n          {/* Mobile Menu Button */}\n          <Button\n            variant=\"ghost\"\n            size=\"sm\"\n            className=\"md:hidden\"\n            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}\n          >\n            {mobileMenuOpen ? (\n              <X className=\"h-6 w-6\" />\n            ) : (\n              <Menu className=\"h-6 w-6\" />\n            )}\n          </Button>\n        </div>\n\n        {/* Mobile Navigation */}\n        {mobileMenuOpen && (\n          <div className=\"md:hidden mt-4 pb-4 border-t border-border pt-4\">\n            <nav className=\"flex flex-col space-y-4\">\n              {navigation.map((item) => (\n                <Link\n                  key={item.name}\n                  href={item.href}\n                  className=\"text-sm font-medium text-muted-foreground hover:text-primary transition-colors duration-200\"\n                  onClick={() => setMobileMenuOpen(false)}\n                >\n                  {item.name}\n                </Link>\n              ))}\n            </nav>\n\n            {/* Mobile Search */}\n            <SearchForm className=\"mt-4 w-full\" />\n          </div>\n        )}\n      </div>\n    </header>\n  );\n}",
       "props": [],
       "imports": [],
       "modificationHints": [
@@ -375,17 +377,16 @@
       "astAnalysis": {
         "componentType": "functional",
         "hooks": [
-          "useState",
           "useState"
         ],
         "complexity": "complex"
       }
     },
-    "phoenix-1758252889314": {
-      "phoenixId": "phoenix-1758252889314",
+    "phoenix-1758254498804": {
+      "phoenixId": "phoenix-1758254498804",
       "componentName": "Layout",
       "filePath": "src/components/layout/Layout.tsx",
-      "lineNumber": 10,
+      "lineNumber": 12,
       "columnNumber": 7,
       "sourceCode": "export function Layout({ children, className = '' }: LayoutProps) {\n  return (\n    <div className=\"min-h-screen flex flex-col bg-background\">\n      <Header />\n      <main className={`flex-1 ${className}`}>\n        {children}\n      </main>\n      <Footer />\n    </div>\n  );\n}",
       "props": [
@@ -410,8 +411,40 @@
         "complexity": "moderate"
       }
     },
-    "phoenix-1758252889315": {
-      "phoenixId": "phoenix-1758252889315",
+    "phoenix-1758254498805": {
+      "phoenixId": "phoenix-1758254498805",
+      "componentName": "SearchForm",
+      "filePath": "src/components/layout/SearchForm.tsx",
+      "lineNumber": 11,
+      "columnNumber": 7,
+      "sourceCode": "export function SearchForm({ className }: SearchFormProps) {\n  const [searchQuery, setSearchQuery] = useState('');\n\n  const handleSearch = () => {\n    if (searchQuery.trim()) {\n      window.location.href = `/search?q=${encodeURIComponent(searchQuery)}`;\n    }\n  };\n\n  const handleKeyPress = (e: React.KeyboardEvent) => {\n    if (e.key === 'Enter') {\n      e.preventDefault();\n      handleSearch();\n    }\n  };\n\n  return (\n    <div className={`relative ${className || ''}`}>\n      <Input\n        type=\"text\"\n        placeholder=\"Search breeds, facts...\"\n        value={searchQuery}\n        onChange={(e) => setSearchQuery(e.target.value)}\n        onKeyPress={handleKeyPress}\n        className={`pl-10 pr-4 py-2 ${className?.includes('w-64') ? 'w-64' : 'w-full'}`}\n      />\n      <Search\n        className=\"absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground cursor-pointer\"\n        onClick={handleSearch}\n      />\n    </div>\n  );\n}",
+      "props": [
+        {
+          "name": "className",
+          "type": "unknown",
+          "required": false
+        }
+      ],
+      "imports": [],
+      "modificationHints": [
+        "text-update",
+        "style-change",
+        "form-validation",
+        "input-handling",
+        "careful-modification",
+        "test-thoroughly",
+        "state-management"
+      ],
+      "astAnalysis": {
+        "componentType": "functional",
+        "hooks": [
+          "useState"
+        ],
+        "complexity": "complex"
+      }
+    },
+    "phoenix-1758254498806": {
+      "phoenixId": "phoenix-1758254498806",
       "componentName": "QueryProvider",
       "filePath": "src/components/query-provider.tsx",
       "lineNumber": 6,
@@ -438,8 +471,8 @@
         "complexity": "moderate"
       }
     },
-    "phoenix-1758252889316": {
-      "phoenixId": "phoenix-1758252889316",
+    "phoenix-1758254498807": {
+      "phoenixId": "phoenix-1758254498807",
       "componentName": "ThemeProvider",
       "filePath": "src/components/theme-provider.tsx",
       "lineNumber": 6,
@@ -462,8 +495,8 @@
         "complexity": "simple"
       }
     },
-    "phoenix-1758252889317": {
-      "phoenixId": "phoenix-1758252889317",
+    "phoenix-1758254498808": {
+      "phoenixId": "phoenix-1758254498808",
       "componentName": "Badge",
       "filePath": "src/components/ui/badge.tsx",
       "lineNumber": 30,
@@ -491,8 +524,8 @@
         "complexity": "moderate"
       }
     },
-    "phoenix-1758252889318": {
-      "phoenixId": "phoenix-1758252889318",
+    "phoenix-1758254498809": {
+      "phoenixId": "phoenix-1758254498809",
       "componentName": "Calendar",
       "filePath": "src/components/ui/calendar.tsx",
       "lineNumber": 10,
@@ -527,8 +560,8 @@
         "complexity": "complex"
       }
     },
-    "phoenix-1758252889319": {
-      "phoenixId": "phoenix-1758252889319",
+    "phoenix-1758254498810": {
+      "phoenixId": "phoenix-1758254498810",
       "componentName": "Skeleton",
       "filePath": "src/components/ui/skeleton.tsx",
       "lineNumber": 3,
@@ -551,8 +584,8 @@
         "complexity": "simple"
       }
     },
-    "phoenix-1758252889320": {
-      "phoenixId": "phoenix-1758252889320",
+    "phoenix-1758254498811": {
+      "phoenixId": "phoenix-1758254498811",
       "componentName": "Toaster",
       "filePath": "src/components/ui/toaster.tsx",
       "lineNumber": 13,
@@ -574,8 +607,8 @@
     }
   },
   "stats": {
-    "totalComponents": 23,
-    "totalFiles": 76,
-    "processingTimeMs": 867
+    "totalComponents": 24,
+    "totalFiles": 77,
+    "processingTimeMs": 686
   }
 }
