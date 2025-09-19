@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -370,22 +371,22 @@ export default function ContactPage() {
                 <CardContent>
                   <div className="space-y-4">
                     <Button variant="outline" className="w-full justify-start" asChild>
-                      <a href="/breeds">
+                      <Link href="/breeds">
                         <Users className="mr-2 h-4 w-4" />
                         Browse Breed Database
-                      </a>
+                      </Link>
                     </Button>
                     <Button variant="outline" className="w-full justify-start" asChild>
-                      <a href="/facts">
+                      <Link href="/facts">
                         <BookOpen className="mr-2 h-4 w-4" />
                         Educational Facts
-                      </a>
+                      </Link>
                     </Button>
                     <Button variant="outline" className="w-full justify-start" asChild>
-                      <a href="/about">
+                      <Link href="/about">
                         <Lightbulb className="mr-2 h-4 w-4" />
                         About Our Mission
-                      </a>
+                      </Link>
                     </Button>
                     <Button variant="outline" className="w-full justify-start" asChild>
                       <a href="/gallery">
