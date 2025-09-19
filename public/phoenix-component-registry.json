@@ -2,10 +2,10 @@
   "projectId": "4b2e7c90-23a4-452b-bf0b-c63b042c3fac",
   "userId": "2luDlbgjvhO32uRKNns0OwSKemA3",
   "version": "1.0.0",
-  "generatedAt": "2025-09-19T04:01:38.834Z",
+  "generatedAt": "2025-09-19T04:07:15.463Z",
   "components": {
-    "phoenix-1758254498788": {
-      "phoenixId": "phoenix-1758254498788",
+    "phoenix-1758254835423": {
+      "phoenixId": "phoenix-1758254835423",
       "componentName": "AboutPage",
       "filePath": "src/app/about/page.tsx",
       "lineNumber": 124,
@@ -24,8 +24,8 @@
         "complexity": "complex"
       }
     },
-    "phoenix-1758254498789": {
-      "phoenixId": "phoenix-1758254498789",
+    "phoenix-1758254835424": {
+      "phoenixId": "phoenix-1758254835424",
       "componentName": "BreedDetailPage",
       "filePath": "src/app/breeds/[slug]/page.tsx",
       "lineNumber": 32,
@@ -50,8 +50,8 @@
         "complexity": "complex"
       }
     },
-    "phoenix-1758254498790": {
-      "phoenixId": "phoenix-1758254498790",
+    "phoenix-1758254835425": {
+      "phoenixId": "phoenix-1758254835425",
       "componentName": "BreedsPage",
       "filePath": "src/app/breeds/page.tsx",
       "lineNumber": 25,
@@ -78,8 +78,8 @@
         "complexity": "complex"
       }
     },
-    "phoenix-1758254498791": {
-      "phoenixId": "phoenix-1758254498791",
+    "phoenix-1758254835426": {
+      "phoenixId": "phoenix-1758254835426",
       "componentName": "ContactPage",
       "filePath": "src/app/contact/page.tsx",
       "lineNumber": 90,
@@ -104,8 +104,8 @@
         "complexity": "complex"
       }
     },
-    "phoenix-1758254498792": {
-      "phoenixId": "phoenix-1758254498792",
+    "phoenix-1758254835427": {
+      "phoenixId": "phoenix-1758254835427",
       "componentName": "CulturePage",
       "filePath": "src/app/culture/page.tsx",
       "lineNumber": 104,
@@ -124,8 +124,8 @@
         "complexity": "complex"
       }
     },
-    "phoenix-1758254498793": {
-      "phoenixId": "phoenix-1758254498793",
+    "phoenix-1758254835428": {
+      "phoenixId": "phoenix-1758254835428",
       "componentName": "Error",
       "filePath": "src/app/error.tsx",
       "lineNumber": 7,
@@ -142,8 +142,8 @@
         "complexity": "moderate"
       }
     },
-    "phoenix-1758254498794": {
-      "phoenixId": "phoenix-1758254498794",
+    "phoenix-1758254835429": {
+      "phoenixId": "phoenix-1758254835429",
       "componentName": "FactsPage",
       "filePath": "src/app/facts/page.tsx",
       "lineNumber": 21,
@@ -169,8 +169,8 @@
         "complexity": "complex"
       }
     },
-    "phoenix-1758254498795": {
-      "phoenixId": "phoenix-1758254498795",
+    "phoenix-1758254835430": {
+      "phoenixId": "phoenix-1758254835430",
       "componentName": "GalleryPage",
       "filePath": "src/app/gallery/page.tsx",
       "lineNumber": 71,
@@ -189,8 +189,8 @@
         "complexity": "complex"
       }
     },
-    "phoenix-1758254498796": {
-      "phoenixId": "phoenix-1758254498796",
+    "phoenix-1758254835431": {
+      "phoenixId": "phoenix-1758254835431",
       "componentName": "GlobalError",
       "filePath": "src/app/global-error.tsx",
       "lineNumber": 5,
@@ -220,13 +220,13 @@
         "complexity": "complex"
       }
     },
-    "phoenix-1758254498797": {
-      "phoenixId": "phoenix-1758254498797",
+    "phoenix-1758254835432": {
+      "phoenixId": "phoenix-1758254835432",
       "componentName": "RootLayout",
       "filePath": "src/app/layout.tsx",
       "lineNumber": 25,
       "columnNumber": 15,
-      "sourceCode": "export default function RootLayout({\n  children,\n}: Readonly<{\n  children: React.ReactNode;\n}>) {\n  return (\n    <html lang=\"en\" suppressHydrationWarning>\n      <body\n        className={`${geistSans.variable} ${geistMono.variable} antialiased`}\n      >\n        <script src=\"/phoenix-tracking.js\" async></script>\n        <QueryProvider>\n          <ThemeProvider\n            attribute=\"class\"\n            defaultTheme=\"system\"\n            enableSystem\n            disableTransitionOnChange\n          >\n            <TooltipProvider>\n              {children}\n              <Toaster />\n              <Sonner />\n            </TooltipProvider>\n          </ThemeProvider>\n        </QueryProvider>\n      </body>\n    </html>\n  );\n}",
+      "sourceCode": "export default function RootLayout({\n  children,\n}: Readonly<{\n  children: React.ReactNode;\n}>) {\n  return (\n    <html lang=\"en\" suppressHydrationWarning>\n      <body\n        className={`${geistSans.variable} ${geistMono.variable} antialiased`}\n      >\n        <script src=\"/phoenix-tracking.js\" async></script>\n\n        <QueryProvider>\n          <ThemeProvider\n            attribute=\"class\"\n            defaultTheme=\"system\"\n            enableSystem\n            disableTransitionOnChange\n          >\n            <TooltipProvider>\n              {children}\n              <Toaster />\n              <Sonner />\n            </TooltipProvider>\n          </ThemeProvider>\n        </QueryProvider>\n      </body>\n    </html>\n  );\n}",
       "props": [
         {
           "name": "children",
@@ -246,8 +246,8 @@
         "complexity": "complex"
       }
     },
-    "phoenix-1758254498798": {
-      "phoenixId": "phoenix-1758254498798",
+    "phoenix-1758254835433": {
+      "phoenixId": "phoenix-1758254835433",
       "componentName": "Loading",
       "filePath": "src/app/loading.tsx",
       "lineNumber": 1,
@@ -264,8 +264,8 @@
         "complexity": "moderate"
       }
     },
-    "phoenix-1758254498799": {
-      "phoenixId": "phoenix-1758254498799",
+    "phoenix-1758254835434": {
+      "phoenixId": "phoenix-1758254835434",
       "componentName": "NotFound",
       "filePath": "src/app/not-found.tsx",
       "lineNumber": 5,
@@ -282,8 +282,8 @@
         "complexity": "moderate"
       }
     },
-    "phoenix-1758254498800": {
-      "phoenixId": "phoenix-1758254498800",
+    "phoenix-1758254835435": {
+      "phoenixId": "phoenix-1758254835435",
       "componentName": "HomePage",
       "filePath": "src/app/page.tsx",
       "lineNumber": 12,
@@ -302,8 +302,8 @@
         "complexity": "complex"
       }
     },
-    "phoenix-1758254498801": {
-      "phoenixId": "phoenix-1758254498801",
+    "phoenix-1758254835436": {
+      "phoenixId": "phoenix-1758254835436",
       "componentName": "BreedCard",
       "filePath": "src/components/breeds/BreedCard.tsx",
       "lineNumber": 14,
@@ -338,8 +338,8 @@
         "complexity": "complex"
       }
     },
-    "phoenix-1758254498802": {
-      "phoenixId": "phoenix-1758254498802",
+    "phoenix-1758254835437": {
+      "phoenixId": "phoenix-1758254835437",
       "componentName": "Footer",
       "filePath": "src/components/layout/Footer.tsx",
       "lineNumber": 27,
@@ -358,8 +358,8 @@
         "complexity": "complex"
       }
     },
-    "phoenix-1758254498803": {
-      "phoenixId": "phoenix-1758254498803",
+    "phoenix-1758254835438": {
+      "phoenixId": "phoenix-1758254835438",
       "componentName": "Header",
       "filePath": "src/components/layout/Header.tsx",
       "lineNumber": 18,
@@ -382,8 +382,8 @@
         "complexity": "complex"
       }
     },
-    "phoenix-1758254498804": {
-      "phoenixId": "phoenix-1758254498804",
+    "phoenix-1758254835439": {
+      "phoenixId": "phoenix-1758254835439",
       "componentName": "Layout",
       "filePath": "src/components/layout/Layout.tsx",
       "lineNumber": 12,
@@ -411,8 +411,8 @@
         "complexity": "moderate"
       }
     },
-    "phoenix-1758254498805": {
-      "phoenixId": "phoenix-1758254498805",
+    "phoenix-1758254835440": {
+      "phoenixId": "phoenix-1758254835440",
       "componentName": "SearchForm",
       "filePath": "src/components/layout/SearchForm.tsx",
       "lineNumber": 11,
@@ -443,8 +443,8 @@
         "complexity": "complex"
       }
     },
-    "phoenix-1758254498806": {
-      "phoenixId": "phoenix-1758254498806",
+    "phoenix-1758254835441": {
+      "phoenixId": "phoenix-1758254835441",
       "componentName": "QueryProvider",
       "filePath": "src/components/query-provider.tsx",
       "lineNumber": 6,
@@ -471,8 +471,8 @@
         "complexity": "moderate"
       }
     },
-    "phoenix-1758254498807": {
-      "phoenixId": "phoenix-1758254498807",
+    "phoenix-1758254835442": {
+      "phoenixId": "phoenix-1758254835442",
       "componentName": "ThemeProvider",
       "filePath": "src/components/theme-provider.tsx",
       "lineNumber": 6,
@@ -495,8 +495,8 @@
         "complexity": "simple"
       }
     },
-    "phoenix-1758254498808": {
-      "phoenixId": "phoenix-1758254498808",
+    "phoenix-1758254835443": {
+      "phoenixId": "phoenix-1758254835443",
       "componentName": "Badge",
       "filePath": "src/components/ui/badge.tsx",
       "lineNumber": 30,
@@ -524,8 +524,8 @@
         "complexity": "moderate"
       }
     },
-    "phoenix-1758254498809": {
-      "phoenixId": "phoenix-1758254498809",
+    "phoenix-1758254835444": {
+      "phoenixId": "phoenix-1758254835444",
       "componentName": "Calendar",
       "filePath": "src/components/ui/calendar.tsx",
       "lineNumber": 10,
@@ -560,8 +560,8 @@
         "complexity": "complex"
       }
     },
-    "phoenix-1758254498810": {
-      "phoenixId": "phoenix-1758254498810",
+    "phoenix-1758254835445": {
+      "phoenixId": "phoenix-1758254835445",
       "componentName": "Skeleton",
       "filePath": "src/components/ui/skeleton.tsx",
       "lineNumber": 3,
@@ -584,8 +584,8 @@
         "complexity": "simple"
       }
     },
-    "phoenix-1758254498811": {
-      "phoenixId": "phoenix-1758254498811",
+    "phoenix-1758254835446": {
+      "phoenixId": "phoenix-1758254835446",
       "componentName": "Toaster",
       "filePath": "src/components/ui/toaster.tsx",
       "lineNumber": 13,
@@ -609,6 +609,6 @@
   "stats": {
     "totalComponents": 24,
     "totalFiles": 77,
-    "processingTimeMs": 686
+    "processingTimeMs": 637
   }
 }
